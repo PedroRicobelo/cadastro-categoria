@@ -1,0 +1,167 @@
+/* Variáveis de cores para tema claro */
+:root {
+  /* Cores principais */
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f9fafb;
+
+  /* Cores de texto */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+
+  /* Cores de borda */
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --border-tertiary: #f1f5f9;
+
+  /* Cores de botões */
+  --btn-primary-bg: #111827;
+  --btn-primary-hover: #374151;
+  --btn-secondary-bg: #f7f7f7;
+  --btn-secondary-hover: #e5e7eb;
+  --btn-danger-bg: #dc2626;
+  --btn-danger-hover: #b91c1c;
+  --btn-success-bg: #2563eb;
+  --btn-success-hover: #1d4ed8;
+
+  /* Cores de input */
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus: #2563eb;
+
+  /* Cores de sidebar */
+  --sidebar-bg: linear-gradient(135deg, #1d2939 70%, #3a506b 100%);
+  --sidebar-text: #cbd5e1;
+  --sidebar-hover: linear-gradient(90deg, #3a506b 60%, #1d2939 100%);
+
+  /* Cores de toggle */
+  --toggle-bg: #ffffff;
+  --toggle-border: #d1d5db;
+  --toggle-border-hover: #9ca3af;
+  --toggle-icon-color: #6b7280;
+  --toggle-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Cores de scrollbar */
+  --scrollbar-thumb: #dedede;
+  --scrollbar-track: #ffffff;
+
+  /* Cores de alertas */
+  --alert-success-bg: #d1fae5;
+  --alert-success-text: #065f46;
+  --alert-success-border: #a7f3d0;
+  --alert-error-bg: #fee2e2;
+  --alert-error-text: #991b1b;
+  --alert-error-border: #fecaca;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Variáveis de cores para tema escuro */
+:root[data-theme="dark"] {
+  /* Cores principais */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+
+  /* Cores de texto */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Cores de borda */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --border-tertiary: #1e293b;
+
+  /* Cores de botões */
+  --btn-primary-bg: #3b82f6;
+  --btn-primary-hover: #2563eb;
+  --btn-secondary-bg: #334155;
+  --btn-secondary-hover: #475569;
+  --btn-danger-bg: #ef4444;
+  --btn-danger-hover: #dc2626;
+  --btn-success-bg: #10b981;
+  --btn-success-hover: #059669;
+
+  /* Cores de input */
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --input-focus: #3b82f6;
+
+  /* Cores de sidebar */
+  --sidebar-bg: linear-gradient(135deg, #0f172a 70%, #1e293b 100%);
+  --sidebar-text: #cbd5e1;
+  --sidebar-hover: linear-gradient(90deg, #1e293b 60%, #0f172a 100%);
+
+  /* Cores de toggle */
+  --toggle-bg: #1e293b;
+  --toggle-border: #475569;
+  --toggle-border-hover: #64748b;
+  --toggle-icon-color: #fbbf24;
+  --toggle-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Cores de scrollbar */
+  --scrollbar-thumb: #475569;
+  --scrollbar-track: #1e293b;
+
+  /* Cores de alertas */
+  --alert-success-bg: #064e3b;
+  --alert-success-text: #a7f3d0;
+  --alert-success-border: #065f46;
+  --alert-error-bg: #7f1d1d;
+  --alert-error-text: #fecaca;
+  --alert-error-border: #991b1b;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--border-primary);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar customizada */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
