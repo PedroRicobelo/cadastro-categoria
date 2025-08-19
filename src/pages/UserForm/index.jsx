@@ -22,7 +22,6 @@ export default function UserForm() {
     const { name, value } = e.target;
     let formattedValue = value;
 
-    // Aplicar formatação baseada no campo
     if (name === "cpf") {
       formattedValue = formatCPF(value);
     } else if (name === "telefone") {
@@ -37,7 +36,6 @@ export default function UserForm() {
     const newErrors = {};
     if (!form.nome.trim()) newErrors.nome = "Nome é obrigatório";
 
-    // Validar CPF (apenas números)
     const cpfNumbers = removeFormatting(form.cpf);
     if (!cpfNumbers) newErrors.cpf = "CPF é obrigatório";
     else if (cpfNumbers.length !== 11)
@@ -47,7 +45,6 @@ export default function UserForm() {
     else if (!/\S+@\S+\.\S+/.test(form.email))
       newErrors.email = "Email inválido";
 
-    // Validar telefone (apenas números)
     const phoneNumbers = removeFormatting(form.telefone);
     if (!phoneNumbers) newErrors.telefone = "Telefone é obrigatório";
     else if (phoneNumbers.length < 10 || phoneNumbers.length > 11)

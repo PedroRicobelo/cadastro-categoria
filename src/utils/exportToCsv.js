@@ -41,7 +41,6 @@ export function exportToCsv(
     link.click();
     document.body.removeChild(link);
 
-    // Limpar URL para evitar memory leaks
     setTimeout(() => URL.revokeObjectURL(url), 100);
 
     return true;

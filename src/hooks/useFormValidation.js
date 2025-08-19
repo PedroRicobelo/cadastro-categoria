@@ -10,7 +10,6 @@ export function useFormValidation(initialValues = {}, validationRules = {}) {
       const { name, value } = e.target;
       setValues((prev) => ({ ...prev, [name]: value }));
 
-      // Limpar erro quando o usuário começa a digitar
       if (errors[name]) {
         setErrors((prev) => ({ ...prev, [name]: "" }));
       }

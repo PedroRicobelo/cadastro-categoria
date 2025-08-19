@@ -63,9 +63,8 @@ export default function UserList() {
   const [showEditarColunas, setShowEditarColunas] = useState(false);
   const [menuAcoesPos, setMenuAcoesPos] = useState({ top: 0, left: 0 });
   const [isExporting, setIsExporting] = useState(false);
-  // Usando o hook useLocalStorage
   const [colunasVisiveis, setColunasVisiveis] = useLocalStorage(
-    "user-columns-v2", // Nova chave para limpar configurações antigas
+    "user-columns-v2",
     {
       nome: true,
       cpf: true,
@@ -80,7 +79,6 @@ export default function UserList() {
     setShowEditarColunas(false);
   });
 
-  // Aplicar filtros
   React.useEffect(() => {
     const filtrados = usuarios.filter((u) => {
       return (

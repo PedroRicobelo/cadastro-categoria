@@ -31,7 +31,6 @@ export default function CategoryList() {
   const [menuAcoesPos, setMenuAcoesPos] = useState({ top: 0, left: 0 });
   const [isExporting, setIsExporting] = useState(false);
 
-  // Usando o hook useLocalStorage
   const [colunasVisiveis, setColunasVisiveis] = useLocalStorage(
     "category-columns",
     {
@@ -46,7 +45,6 @@ export default function CategoryList() {
     setShowEditarColunas(false);
   });
 
-  // Aplicar filtros
   React.useEffect(() => {
     const filtradas = categorias.filter((c) => {
       return (

@@ -19,11 +19,9 @@ export function useDataList(dataKey, originalData, columnsConfig) {
 
   const [filteredData, setFilteredData] = useState(originalData);
 
-  // Função de filtro memoizada
   const applyFilters = useCallback(
     (data, filters) => {
       return data.filter((item) => {
-        // Filtro de busca geral
         if (filters.busca) {
           const searchTerm = filters.busca.toLowerCase();
           const searchableFields = columnsConfig
@@ -35,7 +33,6 @@ export function useDataList(dataKey, originalData, columnsConfig) {
           }
         }
 
-        // Filtros específicos por coluna
         for (const col of columnsConfig) {
           if (filters[col.key]) {
             const fieldValue = String(item[col.key] || "").toLowerCase();
@@ -52,23 +49,19 @@ export function useDataList(dataKey, originalData, columnsConfig) {
     [columnsConfig]
   );
 
-  // Sincronizar filtros temporários quando filtros principais mudarem
   useEffect(() => {
     setFiltrosTemp(filtros);
   }, [filtros]);
 
-  // Aplicar filtros quando mudarem
   useEffect(() => {
     const filtered = applyFilters(originalData, filtros);
     setFilteredData(filtered);
   }, [filtros, originalData, applyFilters]);
 
-  // Aplicar filtros temporários
   const applyTempFilters = useCallback(() => {
     setFiltros(filtrosTemp);
   }, [filtrosTemp, setFiltros]);
 
-  // Limpar filtros
   const clearFilters = useCallback(() => {
     const emptyFilters = {
       busca: "",
